@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Horizon';
+  src: url('/fonts/horizon/Horizon-Bold.woff2') format('woff2'),
+    url('/fonts/horizon/Horizon-Bold.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font-header: 'Horizon', sans-serif;
+$font-body: $font-header;
+$font-btn: $font-body; 
