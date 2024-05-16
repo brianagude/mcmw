@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: { 'en-US': '/en-US', },
   },
-  title: 'Dianthe Studio | Client Starter App',
-  description: 'a starter template for all dianthe studio clients',
+  title: 'MCMW',
+  description: 'MILK & COOKIES MUSIC WEEK 2024',
   icons: { icon: '/favicon.ico' },
   openGraph: {
-    title: 'Dianthe Studio | Client Starter App',
-    description: 'a starter template for all dianthe studio clients',
+    title: 'MCMW',
+    description: 'MILK & COOKIES MUSIC WEEK 2024',
     url: '<https://www.dianthe.studio>',
-    siteName: 'Client Starter App',
+    siteName: 'MCMW',
     images: [
       {
         url: '/card.jpg',

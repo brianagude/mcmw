@@ -12,32 +12,18 @@ export default defineField({
       type: 'text',
       rows: 3,
     }),
-    // Link
+    // Background Image
     defineField({
-      name: 'links',
-      title: 'Link',
-      type: 'array',
-      of: [{type: 'linkInternal'}, {type: 'linkExternal'}],
-      validation: (Rule) => Rule.max(1),
-    }),
-    // Content
-    defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      validation: (Rule) => Rule.max(1),
-      of: [
+      title: 'Background Image',
+      name: 'backgroundImage',
+      type: 'image',
+      fields: [
         {
-          name: 'productWithVariant',
-          title: 'Product with variant',
-          type: 'productWithVariant',
-        },
-        {
-          name: 'imageWithProductHotspots',
-          title: 'Image',
-          type: 'imageWithProductHotspots',
-        },
-      ],
+          name: 'attribution',
+          type: 'string',
+          title: 'Attribution',
+        }
+      ]
     }),
   ],
 })

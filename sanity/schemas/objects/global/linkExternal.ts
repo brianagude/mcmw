@@ -12,8 +12,13 @@ export default defineField({
       title: 'Title',
       name: 'title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     },
+    defineField({
+      title: 'Icon',
+      name: 'icon',
+      type: 'image',
+      description: 'Adding an email will override any text provided'
+    }),
     // URL
     {
       name: 'url',

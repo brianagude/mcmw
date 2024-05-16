@@ -8,24 +8,24 @@ export default defineField({
   title: TITLE,
   type: 'document',
   icon: HomeIcon,
-  groups: [
-    {
-      default: true,
-      name: 'editorial',
-      title: 'Editorial',
-    },
-    {
-      name: 'seo',
-      title: 'SEO',
-    },
-  ],
   fields: [
+    // Marquee
+    defineField({
+      name: "marqueeText",
+      title: "Marquee Text",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "scrollMarquee",
+      title: "Should Marquee Scroll?",
+      type: "boolean",
+    }),
     // Hero
     defineField({
       name: 'hero',
       title: 'Hero',
       type: 'hero.home',
-      group: 'editorial',
     }),
     // Modules
     defineField({
@@ -33,21 +33,10 @@ export default defineField({
       title: 'Modules',
       type: 'array',
       of: [
-        {type: 'module.callout'},
-        {type: 'module.callToAction'},
-        {type: 'module.collection'},
-        {type: 'module.image'},
-        {type: 'module.instagram'},
-        {type: 'module.product'},
+        {type: 'module.carousel'},
+        {type: 'module.event'},
+        {type: 'module.newsletter'},
       ],
-      group: 'editorial',
-    }),
-    // SEO
-    defineField({
-      name: 'seo',
-      title: 'SEO',
-      type: 'seo.home',
-      group: 'seo',
     }),
   ],
   preview: {

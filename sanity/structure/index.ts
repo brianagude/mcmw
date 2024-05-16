@@ -28,13 +28,8 @@ const hiddenDocTypes = (listItem: ListItemBuilder) => {
   }
 
   return ![
-    'collection',
-    'colorTheme',
     'home',
     'media.tag',
-    'page',
-    'product',
-    'productVariant',
     'settings',
   ].includes(id)
 }
@@ -44,14 +39,5 @@ export const structure: StructureResolver = (S, context) =>
     .title('Content')
     .items([
       home(S, context),
-      pages(S, context),
-      S.divider(),
-      collections(S, context),
-      products(S, context),
-      S.divider(),
-      colorThemes(S, context),
-      S.divider(),
       settings(S, context),
-      S.divider(),
-      ...S.documentTypeListItems().filter(hiddenDocTypes),
     ])

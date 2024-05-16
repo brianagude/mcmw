@@ -13,7 +13,7 @@ import {customDocumentActions} from './sanity/plugins/customDocumentActions'
 const devOnlyPlugins = [visionTool()]
 
 export default defineConfig({
-  basePath: "/sanity",
+  basePath: "/admin",
   projectId,
   dataset,
   plugins: [

@@ -75,7 +75,6 @@ import moduleProduct from './objects/module/product'
 import moduleProducts from './objects/module/products'
 import placeholderString from './objects/shopify/placeholderString'
 import priceRange from './objects/shopify/priceRange'
-import spot from './objects/hotspot/spot'
 import productHotspots from './objects/hotspot/productHotspots'
 import option from './objects/shopify/option'
 import productWithVariant from './objects/shopify/productWithVariant'
@@ -89,6 +88,13 @@ import shopifyCollection from './objects/shopify/shopifyCollection'
 import shopifyCollectionRule from './objects/shopify/shopifyCollectionRule'
 import shopifyProduct from './objects/shopify/shopifyProduct'
 import shopifyProductVariant from './objects/shopify/shopifyProductVariant'
+
+import spot from './objects/hotspot/spot'
+import carousel from './objects/module/carousel'
+import newsletter from './objects/module/newsletter'
+import event from './objects/module/event'
+import eventItem from './objects/module/eventItem'
+
 
 // Collections
 import collectionGroup from './objects/collection/group'
@@ -142,6 +148,10 @@ const objects = [
   shopifyProductVariant,
   collectionGroup,
   collectionLinks,
+  carousel,
+  newsletter,
+  event,
+  eventItem
 ]
 
 export const schemaTypes = [...annotations, ...singletons, ...objects, ...blocks, ...documents]
