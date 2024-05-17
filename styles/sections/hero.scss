@@ -1,0 +1,74 @@
+.hero-section {
+  position: relative;
+  aspect-ratio: 4/5;
+  padding: 16px 0; 
+
+  @include bp(sm){
+    aspect-ratio: 1/1
+  }
+
+  @include bp(lg){
+    aspect-ratio: 15/8
+  }
+
+  img {
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .linkbar-marquee {
+    padding: 8px 0;
+    background: $yellow;
+    border-top: 2px solid $black;
+    border-bottom: 1px solid $black;
+    transform: rotate(-0.73deg);
+    
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 1;
+
+    .rfm-child { 
+      margin-left: 24px; 
+      // display: inline-block;
+    }
+  }
+
+  h1 {
+    color: $white;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center; 
+    transform: rotate(0.73deg);
+    margin-top: 40px;
+
+    @include bp(xs){
+      font-size: 32px; 
+    }
+
+    @include bp(sm){
+      font-size: 56px;
+    }
+
+    @include bp(xl){
+      font-size: 80px;
+    }
+
+    span {
+      display: block;
+      background: $black; 
+      padding: 8px;
+      margin: 0 auto; 
+      border-radius: 4px;
+
+      & + span { margin-top: 8px; }
+      @include bp(sm){
+        width: fit-content;
+        padding: 8px 32px; 
+      }
+    }
+  }
+}

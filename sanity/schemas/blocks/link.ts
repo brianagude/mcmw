@@ -21,7 +21,7 @@ export default defineField({
       title: 'Email',
       name: 'email',
       type: 'email',
-      description: 'adding an email will override any url provided'
+      description: 'Adding an email will override any url provided'
     }),
     defineField({
       title: 'Button Style',

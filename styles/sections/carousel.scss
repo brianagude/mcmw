@@ -1,0 +1,103 @@
+.carousel-section {
+  background-image: url('/backgrounds/carousel-bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include bp(sm) {
+    background-image: url('/backgrounds/carousel-bg-tb.webp');
+  }
+
+  @include bp(lg) {
+    background-image: url('/backgrounds/carousel-bg-dt.webp');
+  }
+
+  h2 {
+    color: $white;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    transform: rotate(-1.524deg);
+
+    display: block;
+    background: $black;
+    padding: 8px;
+    margin: 0 auto;
+    border-radius: 4px;
+
+    @include bp(xs) {
+      font-size: 28px;
+    }
+
+    @include bp(sm) {
+      font-size: 40px;
+      width: fit-content;
+      padding: 8px 32px;
+    }
+
+    @include bp(md) {
+      font-size: 64px;
+      margin-left: 0;
+    }
+  }
+
+  .container {
+    padding: 0 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+
+    @include bp(sm) {
+      padding: 0 32px;
+    }
+
+    @include bp(lg) {
+      padding: 0 120px;
+    }
+  }
+
+  .carousel-items {
+    margin-top: 48px; 
+  }
+
+  .card {
+    border-radius: 16px;
+    background: $white;
+    padding: 24px;
+
+    &-title {
+      margin-top: 16px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    &-text {
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+  }
+
+  .media-block {
+    position: relative;
+    aspect-ratio: 1/1;
+  }
+
+  .arrow-wrapper {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 48px;
+
+    @include bp(lg){
+      position: absolute;
+      top: 0;
+      right: 120px;
+      margin-top: 16px; 
+    }
+  }
+}

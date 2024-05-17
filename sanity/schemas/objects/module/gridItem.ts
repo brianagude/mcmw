@@ -1,7 +1,5 @@
 import {defineField} from 'sanity'
 
-import blocksToText from '../../../utils/blocksToText'
-
 export default defineField({
   name: 'gridItem',
   title: 'Item',
@@ -12,78 +10,38 @@ export default defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+    }),
+    // Title
+    defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
     }),
     // Image
     defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
-      options: {hotspot: true},
-      validation: (Rule) => Rule.required(),
-    }),
-    // Body
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'array',
-      of: [
+      fields: [
         {
-          lists: [],
-          marks: {
-            annotations: [
-              // Product
-              {
-                name: 'annotationProduct',
-                type: 'annotationProduct',
-              },
-              // Email
-              {
-                name: 'annotationLinkEmail',
-                type: 'annotationLinkEmail',
-              },
-              // Internal link
-              {
-                name: 'annotationLinkInternal',
-                type: 'annotationLinkInternal',
-              },
-              // URL
-              {
-                name: 'annotationLinkExternal',
-                type: 'annotationLinkExternal',
-              },
-            ],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
-              },
-              {
-                title: 'Strong',
-                value: 'strong',
-              },
-            ],
-          },
-          // Regular styles
-          styles: [],
-          // Paragraphs
-          type: 'block',
-        },
-      ],
-      validation: (Rule) => Rule.required(),
+          name: 'alt',
+          type: 'string',
+          title: 'Alt Text',
+        }
+      ]
     }),
   ],
   preview: {
     select: {
-      body: 'body',
+      subtitle: 'subtitle',
       image: 'image',
       title: 'title',
     },
     prepare(selection) {
-      const {body, image, title} = selection
+      const {subtitle, image, title} = selection
       return {
         media: image,
-        subtitle: body && blocksToText(body),
+        subtitle: subtitle,
         title,
       }
     },

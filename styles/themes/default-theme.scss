@@ -1,0 +1,61 @@
+.page-section {
+  position: relative;
+  padding: 120px 0; 
+
+  @include bp(lg){
+    padding: 160px 0;
+  }
+  
+  &:after {
+    content: '';
+    width: 100%;
+    aspect-ratio: 9/1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(50%);
+
+    background-image: url('/shapes/shape-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  &:nth-of-type(even):after {
+    background-image: url('/shapes/shape-2.png');
+  }
+}
+
+.keen-arrow {
+  &:hover {
+    transform: transleteY(2px);
+    cursor: pointer;
+  }
+}
+
+.keen-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+
+  .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: $black;
+    border: 2px solid $black;
+
+    &.active {
+      background: $primary;
+    }
+  }
+}
+
+.annotation-email { 
+  margin-top: 24px; 
+  text-decoration: underline;
+  display: block; 
+}

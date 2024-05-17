@@ -60,27 +60,6 @@ export default defineField({
       validation: (Rule) => Rule.max(1),
       fieldset: 'copy',
     }),
-    // Content
-    defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      validation: (Rule) => Rule.required().max(1),
-      of: [
-        {
-          icon: ImageIcon,
-          type: 'image',
-          title: 'Image',
-          options: {hotspot: true},
-        },
-        {
-          name: 'productWithVariant',
-          title: 'Product + Variant',
-          type: 'productWithVariant',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    }),
   ],
   preview: {
     select: {

@@ -1,14 +1,6 @@
 import type { Metadata } from 'next'
-import { DM_Sans } from 'next/font/google'
-import GsapContainer from "@/components/GsapContainer"
+import { FontITC } from '@/fonts/FontUtils'
 import "@/styles/main.scss"
-
-// FONT STUFF
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-dmSans',
-})
 
 // META STUFF
 export const metadata: Metadata = {
@@ -17,14 +9,14 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: { 'en-US': '/en-US', },
   },
-  title: 'Dianthe Studio | Client Starter App',
-  description: 'a starter template for all dianthe studio clients',
+  title: 'MCMW',
+  description: 'MILK & COOKIES MUSIC WEEK 2024',
   icons: { icon: '/favicon.ico' },
   openGraph: {
-    title: 'Dianthe Studio | Client Starter App',
-    description: 'a starter template for all dianthe studio clients',
+    title: 'MCMW',
+    description: 'MILK & COOKIES MUSIC WEEK 2024',
     url: '<https://www.dianthe.studio>',
-    siteName: 'Client Starter App',
+    siteName: 'MCMW',
     images: [
       {
         url: '/card.jpg',
@@ -35,15 +27,17 @@ export const metadata: Metadata = {
   }
 }
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
-      <body className={`${dmSans.variable}`}>
-        <GsapContainer>{children}</GsapContainer>
+      <body className={`${FontITC.variable}`}>
+       {children}
       </body>
     </html>
   )

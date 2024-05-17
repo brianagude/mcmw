@@ -1,20 +1,63 @@
 :root {
-  --primary: #EC4935;
-  --secondary: #F8BFBD;
-  --black: #0C0A08;
-  --white: #FBFAF9;
+  --primary: #e53b95;
+  --secondary: #6fccdd;
+  --tertiary: #102f35;
+  --yellow: #fefe27;
+  --green: #99e697;
+  --purple: #c29cff;
+  --cream: #fef4e0;
+  --black: #000;
+  --white: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #EC4935;
-    --secondary: #F8BFBD;
-    --black: #0C0A08;
-    --white: #FBFAF9;
+    --primary: #e53b95;
+    --secondary: #6fccdd;
+    --tertiary: #102f35;
+    --yellow: #fefe27;
+    --green: #99e697;
+    --purple: #c29cff;
+    --cream: #fef4e0;
+    --black: #000;
+    --white: #fff;
   }
 }
 
 $primary: var(--primary);
 $secondary: var(--secondary);
+$tertiary: var(--tertiary);
+$yellow: var(--yellow);
+$green: var(--green);
+$purple: var(--purple);
+$cream: var(--cream);
 $black: var(--black);
 $white: var(--white);
+
+.bg-primary {
+  background: $primary;
+}
+
+.bg-secondary {
+  background: $secondary;
+}
+
+.bg-tertiary {
+  background: $tertiary;
+}
+
+.bg-yellow {
+  background: $yellow;
+}
+
+.bg-green {
+  background: $green;
+}
+
+.bg-purple {
+  background: $purple;
+}
+
+.bg-cream {
+  background: $cream;
+}
