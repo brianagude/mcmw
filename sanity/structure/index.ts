@@ -1,9 +1,5 @@
 import {ListItemBuilder, StructureResolver} from 'sanity/structure';
-import collections from './collectionStructure'
-import colorThemes from './colorThemeStructure'
 import home from './homeStructure'
-import pages from './pageStructure'
-import products from './productStructure'
 import settings from './settingStructure'
 
 /**

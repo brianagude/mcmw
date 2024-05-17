@@ -12,24 +12,5 @@ export default defineField({
       type: 'text',
       rows: 3,
     }),
-    // Content
-    defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      validation: (Rule) => Rule.max(1),
-      of: [
-        {
-          name: 'productWithVariant',
-          title: 'Product with variant',
-          type: 'productWithVariant',
-        },
-        {
-          name: 'imageWithProductHotspots',
-          title: 'Image',
-          type: 'imageWithProductHotspots',
-        },
-      ],
-    }),
   ],
 })

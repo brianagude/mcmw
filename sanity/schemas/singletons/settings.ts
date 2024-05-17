@@ -2,9 +2,6 @@ import {CogIcon} from '@sanity/icons'
 import {defineType, defineField} from 'sanity'
 
 const TITLE = 'Settings'
-interface ProductOptions {
-  title: string
-}
 
 export default defineType({
   name: 'settings',

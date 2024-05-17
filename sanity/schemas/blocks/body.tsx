@@ -22,11 +22,6 @@ export default defineField({
           },
         ],
         annotations: [
-          // product
-          {
-            name: 'annotationProduct',
-            type: 'annotationProduct',
-          },
           // Email
           {
             name: 'annotationLinkEmail',
