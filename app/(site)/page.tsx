@@ -24,7 +24,7 @@ export default async function Home() {
       <Hero content={home} />
       {home.modules && (
         <div className="module-wrapper">
-          {home.modules.map(module => {
+          {home.modules.map((module: { _type: string; _key: string; }) => {
             switch (module._type) {
               case "module.carousel":
                 return <CarouselModule module={module} key={module._key} />;
