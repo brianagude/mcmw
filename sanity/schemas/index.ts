@@ -41,8 +41,6 @@ import notFoundPage from './objects/global/notFoundPage'
 import heroHome from './objects/hero/home'
 import heroPage from './objects/hero/page'
 import moduleCallToAction from './objects/module/callToAction'
-import moduleGrid from './objects/module/grid'
-import gridItems from './objects/module/gridItem'
 import menu from './objects/global/menu'
 import moduleImage from './objects/module/image'
 import moduleImageAction from './objects/module/imageCallToAction'
@@ -69,8 +67,6 @@ const objects = [
   heroPage,
   menu,
   moduleCallToAction,
-  moduleGrid,
-  gridItems,
   moduleImage,
   moduleImageAction,
   moduleImages,

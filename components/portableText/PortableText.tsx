@@ -8,9 +8,6 @@ import LinkEmailAnnotation from "./annotations/LinkEmail";
 import LinkExternalAnnotation from "./annotations/LinkExternal";
 import LinkInternalAnnotation from "./annotations/LinkInternal";
 import Block from "./blocks/Block";
-import GridBlock from "./blocks/Grid";
-// import ImagesBlock from "./blocks/Images";
-// import InstagramBlock from "./blocks/Instagram";
 
 const SHARED_LIST_CLASSES = clsx(
   "first:mt-0 last:mb-0", //
@@ -39,9 +36,6 @@ export default function PortableText({ blocks, centered, className }: Props) {
       annotationLinkEmail: LinkEmailAnnotation,
     },
     block: Block,
-    // types: {
-    //   "module.grid": GridBlock,
-    // },
   };
 
   const portableText = useMemo(() => {
