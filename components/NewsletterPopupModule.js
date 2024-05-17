@@ -47,6 +47,7 @@ export const NewsletterPopupModule = ({ module }) => {
         <div className="media-block">
           <Image
             src={urlForImage(module.image.asset._ref).url()}
+            alt={module.image.alt}
             fill
             priority
           />

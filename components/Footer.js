@@ -20,7 +20,7 @@ export const SiteFooter = ({settings}) => {
                 src={urlForImage(link.icon.asset._ref).url()}
                 width={24}
                 height={24}
-                alt="Footer Link Icon"
+                alt={link.title || "Footer Link Icon"}
               />
             ) : (
               link.title

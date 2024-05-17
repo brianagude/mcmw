@@ -45,7 +45,7 @@ export const CarouselModule = ({ module }) => {
                   <Image
                     src={urlForImage(item.image.asset._ref).url()}
                     fill
-                    alt={item.image.alt || 'Talent Headshot'}
+                    alt={item.title || 'Talent Headshot'}
                   />
                 </div>
                 {item.title && <h5 className='card-title'>{item.title}</h5>}
