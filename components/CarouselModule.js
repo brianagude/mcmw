@@ -42,8 +42,6 @@ export const CarouselModule = ({ module }) => {
   };
 
   const [sliderRef, instanceRef] = useKeenSlider(sliderOptions);
-  console.log('instanceRef', instanceRef)
-  console.log('instanceRef', instanceRef.current)
 
   return (
     <section className={`carousel-section page-section ${cardCarousel ? 'card-carousel' : 'press-logo-section'}`}>

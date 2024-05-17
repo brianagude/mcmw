@@ -1,5 +1,5 @@
-import {DocumentIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import { DocumentIcon } from '@sanity/icons';
+import { defineField } from 'sanity';
 
 export default defineField({
   name: 'eventItem',
@@ -66,12 +66,10 @@ export default defineField({
     },
     prepare(selection) {
       const { date, title } = selection;
-      const options = { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC' };
-      const formattedDate = new Date(date).toLocaleDateString(undefined, options);
       return {
-        subtitle: formattedDate,
+        subtitle: date,
         title,
       };
     },
   },
-})
+});

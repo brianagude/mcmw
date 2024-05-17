@@ -2,8 +2,8 @@ import {BulbOutlineIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
-  name: 'module.carousel',
-  title: 'Carousel',
+  name: 'module.pressLogos',
+  title: 'Press Logos',
   type: 'object',
   icon: BulbOutlineIcon,
   fields: [
@@ -22,7 +22,7 @@ export default defineField({
       type: 'array',
       of: [
         {
-          type: 'gridItem',
+          type: 'image',
         },
       ],
     },),
@@ -35,7 +35,7 @@ export default defineField({
     prepare(selection) {
       const {title} = selection
       return {
-        subtitle: 'Carousel',
+        subtitle: 'Press Logos',
         title: title,
         media: BulbOutlineIcon,
       }
