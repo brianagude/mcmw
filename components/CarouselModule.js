@@ -13,10 +13,10 @@ export const CarouselModule = ({ module }) => {
     initial: 0,
     loop: true,
     breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 5 },
+      "(min-width: 424px)": {
+        slides: { perView: 2, spacing: 10 },
       },
-      "(min-width: 1000px)": {
+      "(min-width: 1024px)": {
         slides: { perView: 4, spacing: 10 },
       },
       
@@ -45,7 +45,7 @@ export const CarouselModule = ({ module }) => {
                   <Image
                     src={urlForImage(item.image.asset._ref).url()}
                     fill
-                    alt={item.image.alt || 'Talent Headshot'}
+                    alt={item.title || 'Talent Headshot'}
                   />
                 </div>
                 {item.title && <h5 className='card-title'>{item.title}</h5>}

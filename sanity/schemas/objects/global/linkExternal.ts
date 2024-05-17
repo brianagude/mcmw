@@ -17,7 +17,16 @@ export default defineField({
       title: 'Icon',
       name: 'icon',
       type: 'image',
-      description: 'Adding an email will override any text provided'
+      description: 'Adding an email will override any text provided',
+      fields: [
+        {
+          title: "Alternative Text",
+          description: 'Briefly describe the image',
+          name: "alt",
+          type: "string",
+          validation: Rule => Rule.required(),
+        },
+      ],
     }),
     // URL
     {

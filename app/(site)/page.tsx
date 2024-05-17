@@ -32,6 +32,8 @@ export default async function Home() {
   const home = await client.fetch(query);
   const settings = await client.fetch(settingsQuery);
 
+  console.log('home', home)
+
   return (
     <main className="page-wrapper">
       <SiteHeader logo={settings.headerLogo}/>

@@ -8,7 +8,7 @@ export const NewsletterModule = ({ module }) => {
         <Image
           src={urlForImage(module.backgroundImage.asset._ref).url()}
           fill
-          // alt={module.backgroundImage.alt}
+          alt={module.backgroundImage.alt}
         />
 
         <div className='form-wrapper'>

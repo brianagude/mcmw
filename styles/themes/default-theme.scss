@@ -9,21 +9,43 @@
   &:after {
     content: '';
     width: 100%;
-    aspect-ratio: 9/1;
+    
     position: absolute;
     bottom: 0;
     left: 0;
     transform: translateY(50%);
-
-    background-image: url('/shapes/shape-1.png');
+    
     background-size: contain;
     background-repeat: no-repeat;
     pointer-events: none;
-    z-index: 10;
+    z-index: 5;
+    background-image: url('/shapes/shape-1mb.png');
+    aspect-ratio: 5/1;
+  
+    @include bp(sm) {
+      background-image: url('/shapes/shape-1tb.png');
+      aspect-ratio: 32/5;
+    }
+  
+    @include bp(lg) {
+      background-image: url('/shapes/shape-1.png');
+      aspect-ratio: 9/1;
+    }
   }
 
   &:nth-of-type(even):after {
-    background-image: url('/shapes/shape-2.png');
+    background-image: url('/shapes/shape-2mb.png');
+    aspect-ratio: 5/1;
+
+    @include bp(sm){
+      background-image: url('/shapes/shape-2tb.png');
+      aspect-ratio: 32/5;
+    }
+
+    @include bp(lg){
+      background-image: url('/shapes/shape-2.png');
+      aspect-ratio: 9/1;
+    }
   }
 }
 

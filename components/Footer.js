@@ -4,7 +4,6 @@ import { urlForImage } from "@/sanity/utils/urlFor";
 import PortableText from "@/components/portableText/PortableText";
 
 export const SiteFooter = ({settings}) => {
-  console.log(settings.footer.links[0].icon.asset._ref)
   const currentYear = new Date().getFullYear();
   const renderLinks = settings.footer?.links?.map((link) => {
     if (link._type === "linkExternal") {
@@ -21,7 +20,7 @@ export const SiteFooter = ({settings}) => {
                 src={urlForImage(link.icon.asset._ref).url()}
                 width={24}
                 height={24}
-                alt="Footer Link Icon"
+                alt={link.title || "Footer Link Icon"}
               />
             ) : (
               link.title
@@ -70,7 +69,6 @@ export const SiteFooter = ({settings}) => {
         <div className="footer-fine-print">
           <p>&copy;{currentYear} {settings.finePrint}</p>
         </div>
-
       </div>
     </footer>
   );

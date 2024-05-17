@@ -65,11 +65,13 @@ export default defineType({
       options: {hotspot: true},
       fields: [
         {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-        }
-      ]
+          title: "Alternative Text",
+          description: 'Briefly describe the image',
+          name: "alt",
+          type: "string",
+          validation: Rule => Rule.required(),
+        },
+      ],
     }),
   ],
 })

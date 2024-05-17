@@ -34,12 +34,13 @@ export default defineField({
       type: 'image',
       fields: [
         {
-          name: 'alt',
-          type: 'string',
-          title: 'Alt Text',
-          validation: (Rule) => Rule.required(),
-        }
-      ]
+          title: "Alternative Text",
+          description: 'Briefly describe the image',
+          name: "alt",
+          type: "string",
+          validation: Rule => Rule.required(),
+        },
+      ],
     }),
   ],
   preview: {
