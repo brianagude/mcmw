@@ -1,6 +1,6 @@
 .newsletter-section {
   position: relative;
-  padding: 120px 0;
+  // padding: 120px 0;
   img { z-index: 0; }
 
   .container {
@@ -191,7 +191,7 @@
       display: none;
       height: 100%;
       border-radius: 16px;
-      overflow: hidden;
+      // overflow: hidden;
 
       @include bp(lg){
         display: block
@@ -199,6 +199,7 @@
 
       img {
         object-fit: cover;
+        height: 100%;
       }
     }
 

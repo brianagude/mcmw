@@ -46,7 +46,7 @@ export const SiteFooter = ({settings}) => {
     return null;
   });
   return (
-    <footer className="site-footer page-section">
+    <footer className="site-footer">
       <div className="container">
         <div className="footer-brand">
           <div className="footer-logo">
