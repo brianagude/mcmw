@@ -1,5 +1,5 @@
-import { DocumentIcon } from '@sanity/icons';
-import { defineField } from 'sanity';
+import {DocumentIcon} from '@sanity/icons'
+import {defineField} from 'sanity'
 
 export default defineField({
   name: 'eventItem',
@@ -19,10 +19,7 @@ export default defineField({
       title: 'Date',
       name: 'date',
       type: 'date',
-      options: {
-        dateFormat: 'dddd, MMMM Do',
-        calendarTodayLabel: 'Today'
-      },
+      options: { dateFormat: 'dddd, MMMM Do' },
       validation: (Rule) => Rule.required(),
     }),
     // Time
@@ -72,4 +69,4 @@ export default defineField({
       };
     },
   },
-});
+})
