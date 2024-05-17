@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { urlForImage } from "@/sanity/utils/urlFor";
 
 export const PressLogos = ({ module }) => {
-  console.log(module.items)
   return (
     <section className="press-logos page-section">
       <div className="container">

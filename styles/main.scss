@@ -17,3 +17,91 @@
 @import './sections/carousel.scss';
 @import './sections/newsletter.scss';
 @import './sections/press-logos.scss';
+
+.launch-blocker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  padding: 40px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px; 
+    width: 100%;
+    padding: 0 16px;
+    max-width: 640px;
+
+    @include bp(sm){
+      padding: 0 32px; 
+    }
+  }
+
+
+    input[type=password] {
+      display: flex;
+      padding: 24px;
+      align-items: center;
+      gap: 8px;
+      align-self: stretch;
+      border-radius: 56px;
+      border: 2px solid $primary;
+      background: $white;
+      box-shadow: 4px 4px 0px 0px #101828;
+      font-family: $font-text;
+      font-size: 16px;
+      line-height: 1.2;
+      width: 100%;
+      margin-top: 16px;
+  
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.50);
+        font-family: $font-text;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+  
+      &:hover,
+      &:active {
+        background: darken(#fff, 5%);
+      }
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      gap: 24px;
+      // max-width: 
+    }
+  
+    button{
+      display: flex;
+      padding: 24px 40px;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      border-radius: 8px;
+      background: $primary;
+      color: $white;
+      font-family: $font-text;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1;
+      border: none;
+      width: fit-content;
+  
+      &:hover {
+        background: darken(#e53b95, 10%);
+        cursor: pointer;
+      }
+    }
+}

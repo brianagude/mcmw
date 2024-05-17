@@ -9,6 +9,7 @@ import { NewsletterPopupModule } from "@/components/NewsletterPopupModule"; // C
 import { PressLogos } from "@/components/PressLogos"; // Corrected import
 import { SiteHeader } from "@/components/Header"
 import { SiteFooter } from "@/components/Footer"
+import { LaunchBlocker } from "@/components/LaunchBlocker"
 
 const query = groq`
   *[_type == "home"][0]{
@@ -32,33 +33,34 @@ export default async function Home() {
   const home = await client.fetch(query);
   const settings = await client.fetch(settingsQuery);
 
-  console.log('home', home)
-
   return (
-    <main className="page-wrapper">
-      <SiteHeader logo={settings.headerLogo}/>
-      <Hero content={home} />
-      {home.modules && (
-        <div className="module-wrapper">
-          {home.modules.map((module: { _type: string; _key: string; }) => {
-            switch (module._type) {
-              case "module.carousel":
-                return <CarouselModule module={module} key={module._key} />;
-              case "module.event":
-                return <EventsModule module={module} key={module._key} />;
-              case "module.newsletter":
-                return <NewsletterModule module={module} key={module._key} />;
-              case "module.newsletterPopup":
-                return <NewsletterPopupModule module={module} key={module._key} />;
-              case "module.pressLogos":
-                return <PressLogos module={module} key={module._key} />;
-              default:
-                return null;
-            }
-          })}
-        </div>
-      )}
-      <SiteFooter settings={settings}/>
-    </main>
+    <LaunchBlocker>
+
+      <main className="page-wrapper">
+        <SiteHeader logo={settings.headerLogo}/>
+        <Hero content={home} />
+        {home.modules && (
+          <div className="module-wrapper">
+            {home.modules.map((module: { _type: string; _key: string; }) => {
+              switch (module._type) {
+                case "module.carousel":
+                  return <CarouselModule module={module} key={module._key} />;
+                case "module.event":
+                  return <EventsModule module={module} key={module._key} />;
+                case "module.newsletter":
+                  return <NewsletterModule module={module} key={module._key} />;
+                case "module.newsletterPopup":
+                  return <NewsletterPopupModule module={module} key={module._key} />;
+                case "module.pressLogos":
+                  return <PressLogos module={module} key={module._key} />;
+                default:
+                  return null;
+              }
+            })}
+          </div>
+        )}
+        <SiteFooter settings={settings}/>
+      </main>
+    </LaunchBlocker>
   );
 }
