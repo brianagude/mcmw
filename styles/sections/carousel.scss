@@ -47,6 +47,12 @@
     }
   }
 
+  &.press-logo-section {
+    .container {
+      max-width: 1024px;
+    }
+  }
+
   .container {
     padding: 0 16px;
     max-width: 1440px;
@@ -94,9 +100,9 @@
     }
   }
 
-  .brand-logo {
+  .press-logo {
     .media-block {
-      height: 48px; 
+      height: 80px; 
     }
 
     img {

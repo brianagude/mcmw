@@ -25,15 +25,16 @@ const getCookie = (name) => {
 };
 
 export const NewsletterPopupModule = ({ module }) => {
-  console.log(module)
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(() => !getCookie('hideNewsletterPopup'));
 
   useEffect(() => {
-    const hidePopup = getCookie('hideNewsletterPopup');
-    if (hidePopup) {
-      setIsVisible(false);
+    if (!isVisible) {
+      const hidePopup = getCookie('hideNewsletterPopup');
+      if (hidePopup) {
+        setIsVisible(false);
+      }
     }
-  }, []);
+  }, [isVisible]);
 
   const handleClose = () => {
     setCookie('hideNewsletterPopup', 'true', 30);
