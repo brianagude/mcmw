@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { urlForImage } from "@/sanity/utils/urlFor";
 import Image from 'next/image';
 
@@ -25,16 +25,12 @@ const getCookie = (name) => {
 };
 
 export const NewsletterPopupModule = ({ module }) => {
-  const [isVisible, setIsVisible] = useState(() => !getCookie('hideNewsletterPopup'));
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!isVisible) {
-      const hidePopup = getCookie('hideNewsletterPopup');
-      if (hidePopup) {
-        setIsVisible(false);
-      }
-    }
-  }, [isVisible]);
+    const hidePopup = getCookie('hideNewsletterPopup');
+    setIsVisible(!hidePopup);
+  }, []);
 
   const handleClose = () => {
     setCookie('hideNewsletterPopup', 'true', 30);
