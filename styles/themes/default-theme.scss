@@ -5,7 +5,6 @@
   @include bp(lg){
     padding: 160px 0;
   }
-  // padding: 
   
   &:after {
     content: '';
@@ -26,4 +25,37 @@
   &:nth-of-type(even):after {
     background-image: url('/shapes/shape-2.png');
   }
+}
+
+.keen-arrow {
+  &:hover {
+    transform: transleteY(2px);
+    cursor: pointer;
+  }
+}
+
+.keen-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+
+  .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: $black;
+    border: 2px solid $black;
+
+    &.active {
+      background: $primary;
+    }
+  }
+}
+
+.annotation-email { 
+  margin-top: 24px; 
+  text-decoration: underline;
+  display: block; 
 }

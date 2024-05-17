@@ -37,6 +37,7 @@ export default defineField({
         {type: 'module.event'},
         {type: 'module.newsletter'},
         {type: 'module.newsletterPopup'},
+        {type: 'module.pressLogos'},
       ],
     }),
   ],

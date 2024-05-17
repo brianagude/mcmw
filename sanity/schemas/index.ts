@@ -56,6 +56,8 @@ import newsletter from './objects/module/newsletter'
 import newsletterPopup from './objects/module/newsletter-popup'
 import event from './objects/module/event'
 import eventItem from './objects/module/eventItem'
+import pressLogos from './objects/module/pressLogos'
+import gridItem from './objects/module/gridItem'
 
 const objects = [
   footer,
@@ -79,7 +81,9 @@ const objects = [
   newsletter,
   event,
   eventItem,
-  newsletterPopup
+  newsletterPopup,
+  pressLogos,
+  gridItem
 ]
 
 export const schemaTypes = [...annotations, ...singletons, ...objects, ...blocks]

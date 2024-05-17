@@ -14,10 +14,7 @@ const LinkEmailAnnotation = ({ children, value }: Props) => {
 
   return (
     <a
-      className={clsx(
-        "underline transition-opacity duration-200", //
-        "hover:opacity-60"
-      )}
+      className="annotation-email"
       href={`mailto:${value?.email}`}
     >
       <>{children}</>

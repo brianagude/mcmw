@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from 'next/image';
 import { urlForImage } from "@/sanity/utils/urlFor";
 import { useKeenSlider } from 'keen-slider/react';
@@ -8,12 +8,11 @@ import 'keen-slider/keen-slider.min.css';
 export const CarouselModule = ({ module }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const cardCarousel = module.items.some(item => item.title || item.text);
 
   const sliderOptions = {
     initial: 0,
-    loop: cardCarousel ? true : false,
-    breakpoints: cardCarousel ? {
+    loop: true,
+    breakpoints: {
       "(min-width: 400px)": {
         slides: { perView: 2, spacing: 5 },
       },
@@ -21,18 +20,8 @@ export const CarouselModule = ({ module }) => {
         slides: { perView: 4, spacing: 10 },
       },
       
-    } : {
-      "(min-width: 640px)": {
-        slides: { perView: 3 },
-      },
-      "(min-width: 1024px)": {
-        slides: { perView: 4 },
-      },
-      "(min-width: 1280px)": {
-        slides: { perView: 5 },
-      },
     },
-    slides: { perView: cardCarousel ? 1 : 2 },
+    slides: { perView: 1 },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
@@ -44,19 +33,19 @@ export const CarouselModule = ({ module }) => {
   const [sliderRef, instanceRef] = useKeenSlider(sliderOptions);
 
   return (
-    <section className={`carousel-section page-section ${cardCarousel ? 'card-carousel' : 'press-logo-section'}`}>
+    <section className="carousel-section page-section card-carousel">
       <div className="container">
         {module.title && <h2 className='title'>{module.title}</h2>}
 
         <div className="navigation-wrapper carousel-items">
           <div ref={sliderRef} className="keen-slider">
             {module.items.map((item, index) => (
-              <div className={`keen-slider__slide number-slide${index} carousel-item ${cardCarousel ? 'card' : 'press-logo'}`} key={index}>
+              <div className={`keen-slider__slide number-slide${index} carousel-item card`} key={index}>
                 <div className="media-block">
                   <Image
                     src={urlForImage(item.image.asset._ref).url()}
                     fill
-                    alt={item.image.alt || (cardCarousel ? 'Talent Headshot' : 'Brand Logo')}
+                    alt={item.image.alt || 'Talent Headshot'}
                   />
                 </div>
                 {item.title && <h5 className='card-title'>{item.title}</h5>}
@@ -65,7 +54,7 @@ export const CarouselModule = ({ module }) => {
             ))}
           </div>
 
-          {loaded && instanceRef.current && cardCarousel && (
+          {loaded && instanceRef.current && (
             <div className="arrow-wrapper">
               <Arrow
                 left
@@ -83,24 +72,6 @@ export const CarouselModule = ({ module }) => {
                   instanceRef.current.track.details.slides.length - 1
                 }
               />
-            </div>
-          )}
-
-          {loaded && instanceRef.current && !cardCarousel && (
-            <div className="keen-dots">
-              {[
-                ...Array(instanceRef.current.track.details.slides.length).keys(),
-              ].map((idx) => {
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      instanceRef.current?.moveToIdx(idx);
-                    }}
-                    className={"dot" + (currentSlide === idx ? " active" : "")}
-                  ></button>
-                );
-              })}
             </div>
           )}
         </div>

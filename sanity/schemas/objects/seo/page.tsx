@@ -13,7 +13,7 @@ export default defineField({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'placeholderString',
+      type: 'text',
       description: (
         <>
           If empty, displays the document title (<code>title</code>)

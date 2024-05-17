@@ -1,7 +1,8 @@
 .site-footer {
+  
   .footer-brand {
     background: $tertiary;
-    padding: 80px 16px;
+    padding: 120px 16px 80px;
     gap: 40px; 
     display: flex;
     flex-direction: column;
@@ -9,6 +10,10 @@
     justify-content: center;
     text-align: center; 
     color: $white; 
+    
+      @include bp(md){
+        padding-top: 180px; 
+      }
   }
   
   .footer-fine-print {
