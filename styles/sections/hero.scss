@@ -4,11 +4,11 @@
   padding: 16px 0; 
 
   @include bp(sm){
-    aspect-ratio: 1/1
+    aspect-ratio: 1/1;
   }
 
   @include bp(lg){
-    aspect-ratio: 15/8
+    aspect-ratio: 15/9;
   }
 
   img {

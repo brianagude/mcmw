@@ -13,10 +13,10 @@ export const CarouselModule = ({ module }) => {
     initial: 0,
     loop: true,
     breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 5 },
+      "(min-width: 424px)": {
+        slides: { perView: 2, spacing: 10 },
       },
-      "(min-width: 1000px)": {
+      "(min-width: 1024px)": {
         slides: { perView: 4, spacing: 10 },
       },
       

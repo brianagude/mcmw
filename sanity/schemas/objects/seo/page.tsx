@@ -31,6 +31,15 @@ export default defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
+      fields: [
+        {
+          title: "Alternative Text",
+          description: 'Briefly describe the image',
+          name: "alt",
+          type: "string",
+          validation: Rule => Rule.required(),
+        },
+      ],
     }),
   ],
 })

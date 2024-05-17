@@ -20,6 +20,15 @@ export default defineField({
       type: 'image',
       options: {hotspot: true},
       validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: "Alternative Text",
+          description: 'Briefly describe the image',
+          name: "alt",
+          type: "string",
+          validation: Rule => Rule.required(),
+        },
+      ],
     }),
     // Variant
     defineField({
