@@ -1,48 +1,57 @@
+import {BulbOutlineIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
-  name: 'gridItem',
-  title: 'Item',
+  name: 'module.newsletterPopup',
+  title: 'Mailchimp Popup',
   type: 'object',
+  icon: BulbOutlineIcon,
   fields: [
     // Title
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'text',
+      rows: 1,
     }),
     // Title
     defineField({
-      name: 'subtitle',
-      title: 'Subtitle',
+      name: 'body',
+      title: 'Body',
+      type: 'text',
+    }),
+    // Button Text
+    defineField({
+      name: 'submitText',
+      title: 'Button Text',
+      description: 'Defaults to JOIN NOW',
       type: 'string',
     }),
-    // Image
+    // Background Image
     defineField({
-      name: 'image',
       title: 'Image',
+      name: 'image',
       type: 'image',
       fields: [
         {
           name: 'alt',
           type: 'string',
           title: 'Alt Text',
+          validation: (Rule) => Rule.required(),
         }
       ]
     }),
   ],
   preview: {
     select: {
-      subtitle: 'subtitle',
-      image: 'image',
       title: 'title',
     },
     prepare(selection) {
-      const {subtitle, image, title} = selection
+      const {title} = selection
       return {
-        media: image,
-        subtitle: subtitle,
+        subtitle: 'Newsletter Popup',
         title,
+        media: BulbOutlineIcon,
       }
     },
   },

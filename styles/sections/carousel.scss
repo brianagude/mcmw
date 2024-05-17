@@ -1,0 +1,152 @@
+.carousel-section {
+  padding: 120px 0;
+  background: $white;
+
+  &.card-carousel {
+    background-image: url('/backgrounds/carousel-bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    @include bp(sm) {
+      background-image: url('/backgrounds/carousel-bg-tb.webp');
+    }
+  
+    @include bp(lg) {
+      background-image: url('/backgrounds/carousel-bg-dt.webp');
+    }
+
+    h2 {
+      color: $white;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      text-align: center;
+      transform: rotate(-1.524deg);
+
+      display: block;
+      background: $black;
+      padding: 8px;
+      margin: 0 auto;
+      border-radius: 4px;
+
+      @include bp(xs) {
+        font-size: 28px;
+      }
+
+      @include bp(sm) {
+        font-size: 40px;
+        width: fit-content;
+        padding: 8px 32px;
+      }
+
+      @include bp(md) {
+        font-size: 64px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  .container {
+    padding: 0 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+
+    @include bp(sm) {
+      padding: 0 32px;
+    }
+
+    @include bp(lg) {
+      padding: 0 120px;
+    }
+  }
+
+  .carousel-items {
+    margin-top: 48px; 
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .card {
+    border-radius: 16px;
+    background: #FFF;
+    padding: 24px;
+
+    &-title {
+      margin-top: 16px;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    &-text {
+      margin-top: 8px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+  }
+
+  .brand-logo {
+    .media-block {
+      height: 48px; 
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .media-block {
+    position: relative;
+    aspect-ratio: 1/1;
+  }
+
+  .arrow-wrapper {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 48px;
+
+    @include bp(lg){
+      position: absolute;
+      top: 0;
+      right: 120px;
+      margin-top: 16px; 
+    }
+  }
+
+  .keen-arrow {
+    // &.disabled { opacity: 0.5; }
+    &:hover {
+      transform: transleteY(2px);
+      cursor: pointer; 
+    }
+  }
+
+  .keen-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+    margin-top: 40px; 
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      background: $black;
+      border: 2px solid $black;
+
+      &.active { background: $primary; }
+    }
+  }
+}

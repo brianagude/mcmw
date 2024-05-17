@@ -1,5 +1,9 @@
 import type { Metadata } from 'next'
 import { FontITC } from '@/fonts/FontUtils'
+import { groq } from "next-sanity"
+import { client } from "@/sanity/client"
+import { SiteHeader } from "@/components/Header"
+import { SiteFooter } from "@/components/Footer"
 import "@/styles/main.scss"
 
 // META STUFF
@@ -27,15 +31,28 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({
+const query = groq`
+  *[_type == "settings"][0]{
+    "headerLogo": headerLogo.asset._ref,
+    "footerLogo": footerLogo.asset._ref,
+    finePrint,
+    footer
+  }
+`
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  const settings = await client.fetch(query);
   return (
     <html lang="en">
       <body className={`${FontITC.variable}`}>
+        <SiteHeader logo={settings.headerLogo}/>
        {children}
+        <SiteFooter settings={settings}/>
       </body>
     </html>
   )

@@ -1,0 +1,222 @@
+.newsletter-section {
+  position: relative;
+  padding: 120px 0;
+
+  img { z-index: 0; }
+
+  .container {
+    padding: 0 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include bp(sm) {
+      padding: 0 32px;
+    }
+
+    @include bp(lg) {
+      padding: 0 120px;
+    }
+  }
+
+  .form-wrapper {
+    max-width: 520px;
+    padding: 40px 24px;
+    gap: 24px;
+    border-radius: 16px;
+    border: 4px solid $black;
+    background: $white;
+    width: 200%;
+    z-index: 1;
+    position: relative;
+
+    @include bp(md){
+      padding: 64px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include bp(md){
+      font-size: 48px;
+    }
+  }
+
+  .lead {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-top: 16px; 
+  }
+
+  .mc-field-group {
+    margin-top: 24px; 
+  }
+
+  form {
+    margin-top: 48px; 
+  }
+
+  label {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  input[type=text], input[type=email] {
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 56px;
+    border: 2px solid $tertiary;
+    background: #FFF4E0;
+    box-shadow: 4px 4px 0px 0px #101828;
+    font-family: $font-text;
+    font-size: 16px;
+    line-height: 1.2;
+    width: 100%;
+    margin-top: 16px; 
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.50);
+      font-family: $font-text;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    &:hover, &:active {
+      background: darken(#fef4e0, 5%);
+    }
+  }
+
+  .subscribe-btn {
+    display: flex;
+    padding: 24px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    background: $primary;
+    color: $white;
+    font-family: $font-text;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    border: none; 
+    margin: 40px auto 0;
+
+    &:hover {
+      background: darken(#e53b95, 10%);
+      cursor: pointer;
+    }
+
+    @include bp(md){ margi-top: 64px; }
+  }
+
+  &.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    .container {
+      padding: 12px;
+      max-width: 1200px;
+      border-radius: 16px;
+      background: url('/backgrounds/popup-bg.webp');
+      
+      @include bp(lg){
+        padding: 24px;
+        display: grid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 24px;
+      }
+    }
+
+    .form-wrapper {
+      padding: 24px 16px;
+      width: 100%;
+
+      @include bp(md){
+        padding: 32px; 
+      }
+
+      @include bp(xl){
+        padding: 48px; 
+      }
+
+      @include bp(small-only){
+        h2 { font-size: 27px; }
+        .lead { font-size: 16px; }
+
+        form { margin-top: 32px; }
+
+        input[type=text], input[type=email]{
+          padding: 12px 16px;
+          margin-top: 8px; 
+        }
+
+        label { font-size: 16px; }
+
+        .subscribe-btn {
+          font-size: 18px; 
+          padding: 12px 16px;
+          width: 100%;
+        }
+
+        .close-btn { font-size: 16px; }
+      }
+    }
+
+    .media-block {
+      position: relative;
+      display: none;
+      height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+
+      @include bp(lg){
+        display: block
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .close-btn {
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin: 16px auto 0;
+      color: $black;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.2;
+      text-decoration-line: underline;
+      text-transform: uppercase;
+      display: block;
+
+      &:hover { cursor: pointer; }
+    }
+  }
+}

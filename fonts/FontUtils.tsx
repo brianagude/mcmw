@@ -6,17 +6,17 @@ export const FontITC = localFont({
   src: [
     {
       path: './itcavantgardestd-bk.woff2',
-      weight: '500',
-      style: 'italic',
-    },
-    {
-      path: './itcavantgardestd-bold.woff2',
-      weight: '700',
+      weight: '400',
       style: 'normal',
     },
     {
       path: './itcavantgardestd-demi.woff2',
-      weight: '400',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './itcavantgardestd-bold.woff2',
+      weight: '700',
       style: 'normal',
     },
   ],

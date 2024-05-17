@@ -8,3 +8,11 @@
 
 /* THEME STYLES */
 @import "./themes/default-theme";
+
+/* SECTION STYLES */
+@import './sections/header.scss';
+@import './sections/footer.scss';
+@import './sections/hero.scss';
+@import './sections/events.scss';
+@import './sections/carousel.scss';
+@import './sections/newsletter.scss';

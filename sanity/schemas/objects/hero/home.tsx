@@ -10,7 +10,14 @@ export default defineField({
       name: 'title',
       title: 'Title',
       type: 'text',
-      rows: 3,
+      rows: 1,
+    }),
+    // Title
+    defineField({
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'text',
+      rows: 1,
     }),
     // Background Image
     defineField({
@@ -19,11 +26,15 @@ export default defineField({
       type: 'image',
       fields: [
         {
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
-        }
-      ]
+          title: "Alternative Text",
+          name: "alt",
+          type: "string",
+          validation: Rule => Rule.required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+  ],
     }),
   ],
 })

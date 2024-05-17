@@ -36,6 +36,7 @@ export default defineField({
         {type: 'module.carousel'},
         {type: 'module.event'},
         {type: 'module.newsletter'},
+        {type: 'module.newsletterPopup'},
       ],
     }),
   ],

@@ -92,6 +92,7 @@ import shopifyProductVariant from './objects/shopify/shopifyProductVariant'
 import spot from './objects/hotspot/spot'
 import carousel from './objects/module/carousel'
 import newsletter from './objects/module/newsletter'
+import newsletterPopup from './objects/module/newsletter-popup'
 import event from './objects/module/event'
 import eventItem from './objects/module/eventItem'
 
@@ -151,7 +152,8 @@ const objects = [
   carousel,
   newsletter,
   event,
-  eventItem
+  eventItem,
+  newsletterPopup
 ]
 
 export const schemaTypes = [...annotations, ...singletons, ...objects, ...blocks, ...documents]

@@ -33,3 +33,31 @@ $purple: var(--purple);
 $cream: var(--cream);
 $black: var(--black);
 $white: var(--white);
+
+.bg-primary {
+  background: $primary;
+}
+
+.bg-secondary {
+  background: $secondary;
+}
+
+.bg-tertiary {
+  background: $tertiary;
+}
+
+.bg-yellow {
+  background: $yellow;
+}
+
+.bg-green {
+  background: $green;
+}
+
+.bg-purple {
+  background: $purple;
+}
+
+.bg-cream {
+  background: $cream;
+}

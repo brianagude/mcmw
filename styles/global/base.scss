@@ -5,6 +5,8 @@
   transition: all 0.25s ease;
 }
 
+html { background: $black; }
+
 html,
 body {
   max-width: 100vw;
@@ -13,7 +15,6 @@ body {
 
 body {
   color: $black;
-  background: $white;
   font-family: $font-text;
 }
 
@@ -26,4 +27,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.page-wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: hidden;
 }

@@ -34,30 +34,13 @@ export default defineField({
       type: 'image',
       fields: [
         {
-          name: 'attribution',
+          name: 'alt',
           type: 'string',
-          title: 'Attribution',
+          title: 'Alt Text',
+          validation: (Rule) => Rule.required(),
         }
       ]
-    }),
-    defineField({
-      name: "showPopup",
-      title: "Show Popup?",
-      type: "boolean",
-    }),
-    // Background Image
-    defineField({
-      title: 'Popup Image',
-      name: 'popupImage',
-      type: 'image',
-      fields: [
-        {
-          name: 'attribution',
-          type: 'string',
-          title: 'Attribution',
-        }
-      ]
-    }),
+    })
   ],
   preview: {
     select: {
