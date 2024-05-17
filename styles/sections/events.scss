@@ -3,27 +3,6 @@
   background-image: url('/backgrounds/event-bg.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
-  // overflow: hidden;
-
-  &:before {
-    content: '';
-    width: 120%;
-    height: 160px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    background: url('/shapes/shape.webp');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    pointer-events: none;
-
-    @include bp(lg){
-      height: 140px;
-    }
-  }
 
   @include bp(sm){
     background-image: url('/backgrounds/event-bg-tb.webp');

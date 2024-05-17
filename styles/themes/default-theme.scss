@@ -1,0 +1,24 @@
+.page-section {
+  position: relative;
+  // padding: 
+  
+  &:before {
+    content: '';
+    width: 100%;
+    aspect-ratio: 9/1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+
+    background: url('/shapes/shape-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  &:nth-of-type(even):before {
+    background: url('/shapes/shape-2.png');
+  }
+}
