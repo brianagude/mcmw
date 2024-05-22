@@ -31,6 +31,7 @@ export default defineField({
     defineField({
       title: 'Background Image',
       name: 'backgroundImage',
+      description: 'This image should be at least 2000x1300px',
       type: 'image',
       fields: [
         {

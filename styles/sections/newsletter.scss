@@ -1,6 +1,13 @@
 .newsletter-section {
   position: relative;
-  img { z-index: 0; }
+  
+  &:not(.popup){
+    img { 
+      z-index: 0; 
+      object-fit: cover;
+    }
+
+  }
 
   .container {
     padding: 0 16px;
@@ -214,10 +221,6 @@
 
         .close-btn { font-size: 16px; }
       }
-    }
-
-    .mc_embed_signup_scroll {
-      & > * + * { margin-top: 16px; }
     }
 
     .media-block {

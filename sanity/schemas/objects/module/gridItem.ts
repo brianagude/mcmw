@@ -22,6 +22,7 @@ export default defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
+      description: 'Expected aspect ratio is: 3/4'
     }),
   ],
   preview: {

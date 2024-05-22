@@ -81,7 +81,7 @@ export const NewsletterPopupModule = ({ module }) => {
                 id="mc-embedded-subscribe-form"
                 name="mc-embedded-subscribe-form"
                 className="validate"
-                target="hidden_iframe"
+                target="hidden_popup_iframe"
                 ref={popupFormRef}
                 onSubmit={handleSubmit}
               >
@@ -135,7 +135,7 @@ export const NewsletterPopupModule = ({ module }) => {
       </div>
       {/* Hidden iframe for form submission */}
       <iframe
-        name="hidden_iframe"
+        name="hidden_popup_iframe"
         style={{ display: 'none' }}
         ref={popupIframeRef}
         onLoad={handleIframeLoad}

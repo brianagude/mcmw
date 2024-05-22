@@ -23,6 +23,7 @@ export default defineField({
     defineField({
       title: 'Background Image',
       name: 'backgroundImage',
+      description: 'Please make sure this image is at least 2000px wide, and 16/9 ratio.',
       type: 'image',
       fields: [
         {

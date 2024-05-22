@@ -23,6 +23,7 @@ export default defineField({
       of: [
         {
           type: 'image',
+          description: 'Please make sure that the logo is a 400x160px png',
           fields: [
             {
               title: "Alternative Text",

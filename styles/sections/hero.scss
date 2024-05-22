@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/7;
   padding: 16px 0; 
 
   @include bp(sm){
@@ -8,7 +8,7 @@
   }
 
   @include bp(lg){
-    aspect-ratio: 15/9;
+    aspect-ratio: 16/9;
   }
 
   img {
