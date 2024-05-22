@@ -6,7 +6,7 @@ export const SiteHeader = ({logo}) => {
     <header className="site-header">
       <div className="container">
         <div className="header-logo">
-          <a href="https://milkandcookiesfestival.com/">
+          <a href="https://milkandcookiesfestival.com/" target="blank">
             <Image
               src={urlForImage(logo).url()}
               width={140}

@@ -12,7 +12,7 @@ import { SiteFooter } from "@/components/Footer"
 import { LaunchBlocker } from "@/components/LaunchBlocker"
 
 const query = groq`
-  *[_type == "home"][0]{
+  *[_type == "home" && !(_id in path("drafts.**"))][0]{
     modules,
     scrollMarquee,
     marqueeText,
@@ -21,7 +21,7 @@ const query = groq`
 `;
 
 const settingsQuery = groq`
-  *[_type == "settings"][0]{
+  *[_type == "settings" && !(_id in path("drafts.**"))][0]{
     "headerLogo": headerLogo.asset._ref,
     "footerLogo": footerLogo.asset._ref,
     finePrint,
@@ -35,7 +35,6 @@ export default async function Home() {
 
   return (
     <LaunchBlocker>
-
       <main className="page-wrapper">
         <SiteHeader logo={settings.headerLogo}/>
         <Hero content={home} />

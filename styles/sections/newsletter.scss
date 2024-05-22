@@ -20,6 +20,11 @@
     }
   }
 
+  .thank-you-message {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
   .form-wrapper {
     max-width: 640px;
     padding: 40px 24px;
@@ -59,6 +64,11 @@
     margin-top: 24px; 
   }
 
+  #mce-responses {
+    margin-top: 16px; 
+    text-align: center; 
+  }
+
   form {
     margin-top: 48px; 
   }
@@ -70,7 +80,16 @@
     text-transform: uppercase;
   }
 
-  input[type=text], input[type=email] {
+  input {
+    color: $black !important;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.50) !important;
+    }
+  }
+
+  input[type=text], 
+  input[type=email] {
     display: flex;
     padding: 24px;
     align-items: center;
@@ -85,6 +104,7 @@
     line-height: 1.2;
     width: 100%;
     margin-top: 16px; 
+    color: $black;
 
     &::placeholder {
       color: rgba(0, 0, 0, 0.50);
@@ -122,6 +142,16 @@
     @include bp(md){ margi-top: 64px; }
   }
 
+  &.hidden { 
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.visible { 
+    opacity: 100%;
+    pointer-events: all;
+  }
+
   &.popup {
     position: fixed;
     top: 0;
@@ -137,7 +167,7 @@
       max-width: 1200px;
       border-radius: 16px;
       background: url('/backgrounds/popup-bg.webp');
-      margin-top: 40px; 
+      margin-top: 64px; 
       width: fit-content;
       max-width: 640px;
       
@@ -186,6 +216,10 @@
       }
     }
 
+    .mc_embed_signup_scroll {
+      & > * + * { margin-top: 16px; }
+    }
+
     .media-block {
       position: relative;
       display: none;
@@ -217,6 +251,18 @@
       display: block;
 
       &:hover { cursor: pointer; }
+
+      &.top-close-btn {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        background: $white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        text-decoration-line: none;
+
+        &:hover { background: darken(#fff, 20%); }
+      }
     }
   }
 }

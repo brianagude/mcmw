@@ -94,7 +94,11 @@
 
   .media-block {
     position: relative;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden; 
+
+    img { object-fit: cover; }
   }
 
   .arrow-wrapper {

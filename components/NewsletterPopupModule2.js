@@ -1,7 +1,8 @@
 "use client"
+import React, { useState, useEffect, useRef } from 'react';
 import { urlForImage } from "@/sanity/utils/urlFor";
 import Image from 'next/image';
-import React, { useState, useEffect, useRef } from 'react';
+
 
 const setCookie = (name, value) => {
   document.cookie = `${name}=${value}; path=/`;
@@ -20,25 +21,24 @@ const getCookie = (name) => {
 
 export const NewsletterPopupModule = ({ module }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [popupEmail, setPopupEmail] = useState('');
-  const [showPopupError, setShowPopupError] = useState(false);
-  const [showPopupThankYou, setShowPopupThankYou] = useState(false);
-  const popupFormRef = useRef(null);
-  const popupIframeRef = useRef(null);
+  const [email, setEmail] = useState('');
+  const [showError, setShowError] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
+  const formRef = useRef(null);
+  const iframeRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!popupEmail || !/\S+@\S+\.\S+/.test(popupEmail)) {
-      setShowPopupError(true);
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+      setShowError(true);
     } else {
-      setCookie('hideNewsletterPopup', 'true');
-      setShowPopupError(false);
-      popupFormRef.current.submit();
+      setShowError(false);
+      formRef.current.submit();
     }
   };
 
   const handleIframeLoad = () => {
-    setShowPopupThankYou(true);
+    setShowThankYou(true);
   };
 
   useEffect(() => {
@@ -56,8 +56,16 @@ export const NewsletterPopupModule = ({ module }) => {
     setIsVisible(false);
   };
 
+  const addCookie = () => {
+    setCookie('hideNewsletterPopup', 'true');
+  }
+
+  if (!isVisible) {
+    return null;
+  }
+
   return (
-    <section className={`newsletter-section popup page-section ${isVisible ? 'visible' : 'hidden'}`}>
+    <section className="newsletter-section page-section popup">
       <div className="container">
         <button type="button" className="close-btn top-close-btn" onClick={handleClose}>Close</button>
         <div className="media-block">
@@ -82,7 +90,7 @@ export const NewsletterPopupModule = ({ module }) => {
                 name="mc-embedded-subscribe-form"
                 className="validate"
                 target="hidden_iframe"
-                ref={popupFormRef}
+                ref={formRef}
                 onSubmit={handleSubmit}
               >
                 <div id="mc_embed_signup_scroll">
@@ -99,11 +107,8 @@ export const NewsletterPopupModule = ({ module }) => {
                       id="mce-EMAIL"
                       required
                       placeholder="example@example.com"
-                      value={popupEmail}
-                      onChange={(e) => setPopupEmail(e.target.value)}
                     />
                   </div>
-                  {showPopupError && <p className="error-message">Please enter a valid email address.</p>}
                   <div hidden="">
                     <input type="hidden" name="tags" value="2904741" />
                   </div>
@@ -115,7 +120,8 @@ export const NewsletterPopupModule = ({ module }) => {
                     <input type="text" name="b_dd0a4903ee93a291eb0eb77fc_a57c276c6e" tabIndex="-1" />
                   </div>
                   <div className="clear">
-                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" className="subscribe-btn">
+                    {showThankYou && <p className="thank-you-message">Thank you for subscribing!</p>}
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" className="subscribe-btn" onClick={addCookie}>
                       {module.submitText ? module.submitText : 'JOIN NOW'}
                       <Image
                         src='/icons/arrow-white.svg'
@@ -126,18 +132,16 @@ export const NewsletterPopupModule = ({ module }) => {
                     </button>
                     <button type="button" className="close-btn" onClick={handleClose}>I don’t want exclusive content</button>
                   </div>
-                  {showPopupThankYou && <p className="thank-you-message">Thank you for subscribing!</p>}
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      {/* Hidden iframe for form submission */}
       <iframe
         name="hidden_iframe"
         style={{ display: 'none' }}
-        ref={popupIframeRef}
+        ref={iframeRef}
         onLoad={handleIframeLoad}
       ></iframe>
     </section>

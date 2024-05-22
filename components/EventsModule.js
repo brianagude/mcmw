@@ -59,7 +59,7 @@ const getClassName = (date) => {
                 )}
               </div>
 
-              <a href={event.eventLink} className='btn'>
+              <a href={event.eventLink} className='btn' target="blank">
                 {event.buttonText ? event.buttonText : 'RSVP'}
                 <Image
                   src='/icons/arrow.svg'
