@@ -54,6 +54,11 @@
     transform: transleteY(2px);
     cursor: pointer;
   }
+
+  &.disabled { 
+    opacity: 50%; 
+    
+  }
 }
 
 .keen-dots {

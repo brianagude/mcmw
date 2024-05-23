@@ -11,7 +11,6 @@ export const CarouselModule = ({ module }) => {
 
   const sliderOptions = {
     initial: 0,
-    loop: true,
     breakpoints: {
       "(min-width: 424px)": {
         slides: { perView: 2, spacing: 10 },
@@ -19,9 +18,8 @@ export const CarouselModule = ({ module }) => {
       "(min-width: 1024px)": {
         slides: { perView: 4, spacing: 10 },
       },
-      
     },
-    slides: { perView: 1 },
+    slides: { perView: 1, spacing: 10 },
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel);
     },
