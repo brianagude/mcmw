@@ -169,6 +169,8 @@
     z-index: 10;
     padding: 16px;
 
+    &:after { display: none !important; }
+
     .container {
       padding: 12px;
       max-width: 1200px;
