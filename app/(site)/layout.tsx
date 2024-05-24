@@ -4,7 +4,7 @@ import "@/styles/main.scss"
 
 // META STUFF
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.mcmw.online'),
+  metadataBase: new URL('https://www.mcmw.global'),
   alternates: {
     canonical: '/',
     languages: { 'en-US': '/en-US', },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'MCMW',
     description: 'MILK & COOKIES MUSIC WEEK 2024',
-    url: '<https://www.mcmw.online>',
+    url: '<https://www.mcmw.global>',
     siteName: 'MCMW',
     images: [
       {
