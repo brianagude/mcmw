@@ -18,6 +18,10 @@ export default defineType({
       name: 'footer',
       title: 'Footer',
     },
+    {
+      name: 'meta',
+      title: 'Meta',
+    },
   ],
   fields: [
     // Header
@@ -47,6 +51,30 @@ export default defineType({
       title: 'Footer',
       type: 'footerSettings',
       group: 'footer',
+    }),
+    defineField({
+      name: "metaTitle",
+      title: "Meta Title",
+      type: "string",
+      group: 'meta',
+      description: "Defaults to MCMW"
+    }),
+    defineField({
+      name: "metaDescription",
+      title: "Meta Description",
+      type: "string",
+      group: 'meta',
+      description: "Defaults to MILK & COOKIES MUSIC WEEK 2024"
+    }),
+    defineField({
+      name: "metaImage",
+      title: "Meta Image",
+      type: "image",
+      group: 'meta',
+      options: {
+        hotspot: true,
+      },
+      description: "Image should be a 2:1 ratio. 2400px x 1200px for best quality.",
     }),
   ],
   preview: {
