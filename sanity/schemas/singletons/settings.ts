@@ -20,7 +20,7 @@ export default defineType({
     },
     {
       name: 'meta',
-      title: 'Meta',
+      title: 'SEO',
     },
   ],
   fields: [
@@ -54,21 +54,21 @@ export default defineType({
     }),
     defineField({
       name: "metaTitle",
-      title: "Meta Title",
+      title: "SEO Title",
       type: "string",
       group: 'meta',
       description: "Defaults to MCMW"
     }),
     defineField({
       name: "metaDescription",
-      title: "Meta Description",
+      title: "SEO Description",
       type: "string",
       group: 'meta',
       description: "Defaults to MILK & COOKIES MUSIC WEEK 2024"
     }),
     defineField({
       name: "metaImage",
-      title: "Meta Image",
+      title: "SEO Image",
       type: "image",
       group: 'meta',
       options: {
