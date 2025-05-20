@@ -1,11 +1,11 @@
-import {DocumentIcon} from '@sanity/icons'
+import {CalendarIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'module.event',
   title: 'Events',
   type: 'object',
-  icon: DocumentIcon,
+  icon: CalendarIcon,
   fields: [
     // Title
     defineField({
@@ -36,7 +36,8 @@ export default defineField({
 
       return {
         title,
-        subtitle: 'Events'
+        subtitle: 'Events',
+        media: CalendarIcon
       }
     },
   },
