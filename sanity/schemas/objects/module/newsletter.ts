@@ -3,7 +3,7 @@ import {defineField} from 'sanity'
 
 export default defineField({
   name: 'module.newsletter',
-  title: 'Mailchimp',
+  title: 'Newsletter',
   type: 'object',
   icon: BulbOutlineIcon,
   fields: [

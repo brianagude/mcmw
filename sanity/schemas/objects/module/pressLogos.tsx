@@ -1,11 +1,11 @@
-import {BulbOutlineIcon} from '@sanity/icons'
+import {ImagesIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'module.pressLogos',
   title: 'Press Logos',
   type: 'object',
-  icon: BulbOutlineIcon,
+  icon: ImagesIcon,
   fields: [
     // Title
     defineField({
@@ -47,7 +47,7 @@ export default defineField({
       return {
         subtitle: 'Press Logos',
         title: title,
-        media: BulbOutlineIcon,
+        media: ImagesIcon,
       }
     },
   },

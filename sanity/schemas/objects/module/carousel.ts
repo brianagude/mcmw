@@ -1,11 +1,11 @@
-import {BulbOutlineIcon} from '@sanity/icons'
+import {InlineElementIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
   name: 'module.carousel',
   title: 'Carousel',
   type: 'object',
-  icon: BulbOutlineIcon,
+  icon: InlineElementIcon,
   fields: [
     // Title
     defineField({
@@ -37,7 +37,7 @@ export default defineField({
       return {
         subtitle: 'Carousel',
         title: title,
-        media: BulbOutlineIcon,
+        media: InlineElementIcon,
       }
     },
   },
