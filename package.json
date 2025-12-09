@@ -16,7 +16,7 @@
     "clsx": "^2.1.1",
     "keen-slider": "^6.8.6",
     "lodash.get": "^4.4.2",
-    "next": "^15.1.4",
+    "next": "15.1.9",
     "next-sanity": "^9.8.32",
     "pluralize-esm": "^9.0.2",
     "react": "^18.3.1",
